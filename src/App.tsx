@@ -16,9 +16,13 @@ function App() {
   ])
 
   const [query, setQuery] = useState(
-    `
-`
-
+    `set quantity_minimum = 2
+select keys from words as word where 180 < word.center.x < 200 and word.center.y > 800
+select prices from words as word where 1000 < word.center.x < 1200 and 1100 > word.center.y > 800
+select amounts from words as word with keys as key where 1400 < word.center.x < 1500 and -20 < (key.center.y - word.center.y) < 20
+export keys as keys
+export amounts as amounts
+export prices as prices`
 )
 
 
